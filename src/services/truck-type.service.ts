@@ -3,6 +3,7 @@ import TruckTypeRepository from '../repositories/truck-type.repository';
 
 interface FindAllResponse {
   id: number
+  groupId: number
   image?: string
   name: string
 }
@@ -21,7 +22,8 @@ export default class TruckTypeService {
 
     return truckTypes.map(truck => ({
       id: truck.id,
-      image: null,
+      groupId: truck.groupId,
+      image: truck.image,
       name: language === 'TH' ? truck.nameTh : truck.nameEn,
     }));
   }

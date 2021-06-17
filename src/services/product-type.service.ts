@@ -21,7 +21,7 @@ export default class ProductService {
 
     return productTypes.map(product => ({
       id: product.id,
-      image: null,
+      image: product.image,
       name: language === 'TH' ? product.nameTh : product.nameEn,
     }));
   }
