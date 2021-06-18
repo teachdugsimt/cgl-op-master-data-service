@@ -42,8 +42,10 @@ export default class MasterDataController {
       schema: getZoneSchema
     }
   })
-  async getZone(req: FastifyRequest<{ Headers: { 'accept-language': 'TH' | 'EN' } }>, reply: FastifyReply): Promise<object> {
-    return this.zoneService.findAll(req.headers['accept-language']);
+  async getZone(req: FastifyRequest<{ Headers: { 'accept-language': 'TH' | 'EN' }, Querystring: { requiredProvince?: boolean } }>, reply: FastifyReply): Promise<object> {
+    return req.query.requiredProvince
+      ? this.zoneService.findAllWithProvince(req.headers['accept-language'])
+      : this.zoneService.findAll(req.headers['accept-language']);
   }
 
   @GET({

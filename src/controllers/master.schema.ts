@@ -41,6 +41,12 @@ export const getZoneSchema: FastifySchema = {
       }
     }
   },
+  querystring: {
+    type: 'object',
+    properties: {
+      requiredProvince: { type: 'boolean' }
+    }
+  },
   response: {
     200: {
       type: 'array',

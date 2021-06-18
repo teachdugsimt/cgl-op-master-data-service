@@ -6,3 +6,5 @@ export * from './product-type.entity';
 export * from './truck-type-group.entity';
 export * from './truck-type.entity';
 export * from './zone.entity';
+export * from './vw-zone-province-en.entity';
+export * from './vw-zone-province-th.entity';

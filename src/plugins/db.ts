@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import fp from 'fastify-plugin';
 import { createConnection } from 'typeorm';
-import { AddrDistrict, AddrProvince, AddrSubdistrict, Item, ProductType, TruckType, TruckTypeGroup, Zone } from '../models';
+import { AddrDistrict, AddrProvince, AddrSubdistrict, Item, ProductType, TruckType, TruckTypeGroup, VwZoneProvinceEn, VwZoneProvinceTh, Zone } from '../models';
 
 export default fp(async server => {
   try {
@@ -17,6 +17,8 @@ export default fp(async server => {
       truckTypeGroup: connection.getRepository(TruckTypeGroup),
       truckType: connection.getRepository(TruckType),
       zone: connection.getRepository(Zone),
+      vwZoneProvinceEn: connection.getRepository(VwZoneProvinceEn),
+      vwZoneProvinceTh: connection.getRepository(VwZoneProvinceTh)
     });
   } catch (error) {
     console.log(error);
