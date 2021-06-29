@@ -16,10 +16,10 @@ export default class ProvinceService {
   async init(): Promise<void> {
   }
 
-  async findAll(descending: boolean, language: 'EN' | 'TH'): Promise<FindAllResponse[]> {
+  async findAll(descending: boolean, language: 'en' | 'th'): Promise<FindAllResponse[]> {
     const options = {
       order: {
-        ...(language === 'TH' ? { nameInThai: descending ? 'DESC' : 'ASC' } : { nameInEnglish: descending ? 'DESC' : 'ASC' })
+        ...(language === 'th' ? { nameInThai: descending ? 'DESC' : 'ASC' } : { nameInEnglish: descending ? 'DESC' : 'ASC' })
       }
     }
 
@@ -29,17 +29,17 @@ export default class ProvinceService {
       id: prov.id,
       groupId: prov.zoneId,
       image: null,
-      name: language === 'TH' ? prov.nameInThai : prov.nameInEnglish
+      name: language === 'th' ? prov.nameInThai : prov.nameInEnglish
     }));
   }
 
-  async findWithZonId(zoneId: number, descending: boolean, language: 'EN' | 'TH'): Promise<FindAllResponse[]> {
+  async findWithZonId(zoneId: number, descending: boolean, language: 'en' | 'th'): Promise<FindAllResponse[]> {
     const options = {
       where: {
         zoneId: zoneId
       },
       order: {
-        ...(language === 'TH' ? { nameInThai: descending ? 'DESC' : 'ASC' } : { nameInEnglish: descending ? 'DESC' : 'ASC' })
+        ...(language === 'th' ? { nameInThai: descending ? 'DESC' : 'ASC' } : { nameInEnglish: descending ? 'DESC' : 'ASC' })
       }
     }
     console.log('options :>> ', options);
@@ -50,7 +50,7 @@ export default class ProvinceService {
       id: prov.id,
       groupId: zoneId,
       image: null,
-      name: language === 'TH' ? prov.nameInThai : prov.nameInEnglish
+      name: language === 'th' ? prov.nameInThai : prov.nameInEnglish
     }));
   }
 

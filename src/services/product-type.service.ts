@@ -15,14 +15,14 @@ export default class ProductService {
   async init(): Promise<void> {
   }
 
-  async findAll(language: 'TH' | 'EN'): Promise<FindAllResponse[]> {
+  async findAll(language: 'th' | 'en'): Promise<FindAllResponse[]> {
 
     const productTypes = await productTypeRepository.find();
 
     return productTypes.map(product => ({
       id: product.id,
       image: product.image,
-      name: language === 'TH' ? product.nameTh : product.nameEn,
+      name: language === 'th' ? product.nameTh : product.nameEn,
     }));
   }
 

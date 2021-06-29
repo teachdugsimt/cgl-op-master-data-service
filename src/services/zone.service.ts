@@ -19,22 +19,22 @@ export default class ZoneService {
   async init(): Promise<void> {
   }
 
-  async findAll(language: 'TH' | 'EN'): Promise<FindAllResponse[]> {
+  async findAll(language: 'th' | 'en'): Promise<FindAllResponse[]> {
     const zones = await zoneRepository.find();
 
     return zones.map(zone => ({
       id: zone.id,
       image: null,
-      name: language === 'TH' ? zone.nameTh : zone.nameEn,
+      name: language === 'th' ? zone.nameTh : zone.nameEn,
     }));
   }
 
-  async findAllWithProvince(language: 'TH' | 'EN'): Promise<any> {
+  async findAllWithProvince(language: 'th' | 'en'): Promise<any> {
     const options = {
       order: { id: 'ASC' }
     }
 
-    return language === 'TH' ? vwZoneProvinceTh.find(options) : vwZoneProvinceEn.find(options);
+    return language === 'th' ? vwZoneProvinceTh.find(options) : vwZoneProvinceEn.find(options);
   }
 
   @Destructor()

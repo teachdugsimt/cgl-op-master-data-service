@@ -16,7 +16,7 @@ export default class TruckTypeService {
   async init(): Promise<void> {
   }
 
-  async findAll(language: 'TH' | 'EN'): Promise<FindAllResponse[]> {
+  async findAll(language: 'th' | 'en'): Promise<FindAllResponse[]> {
 
     const truckTypes = await truckTypeRepository.find();
 
@@ -24,7 +24,7 @@ export default class TruckTypeService {
       id: truck.id,
       groupId: truck.groupId,
       image: truck.image,
-      name: language === 'TH' ? truck.nameTh : truck.nameEn,
+      name: language === 'th' ? truck.nameTh : truck.nameEn,
     }));
   }
 

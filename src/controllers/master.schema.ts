@@ -6,7 +6,7 @@ export const getProvinceSchema: FastifySchema = {
     properties: {
       'accept-language': {
         type: 'string',
-        enum: ['TH', 'EN']
+        enum: ['th', 'en']
       }
     }
   },
@@ -37,7 +37,7 @@ export const getZoneSchema: FastifySchema = {
     properties: {
       'accept-language': {
         type: 'string',
-        enum: ['TH', 'EN']
+        enum: ['th', 'en']
       }
     }
   },
@@ -66,7 +66,7 @@ export const getProductType: FastifySchema = {
     properties: {
       'accept-language': {
         type: 'string',
-        enum: ['TH', 'EN']
+        enum: ['th', 'en']
       }
     }
   },
@@ -89,7 +89,7 @@ export const getTruckType: FastifySchema = {
     properties: {
       'accept-language': {
         type: 'string',
-        enum: ['TH', 'EN']
+        enum: ['th', 'en']
       }
     }
   },
@@ -113,7 +113,7 @@ export const getTruckTypeGroup: FastifySchema = {
     properties: {
       'accept-language': {
         type: 'string',
-        enum: ['TH', 'EN']
+        enum: ['th', 'en']
       }
     }
   },

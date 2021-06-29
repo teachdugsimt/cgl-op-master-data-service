@@ -24,7 +24,7 @@ export default class MasterDataController {
     }
   })
   async getProvince(req: FastifyRequest<{
-    Headers: { 'accept-language': 'TH' | 'EN' }
+    Headers: { 'accept-language': 'th' | 'en' }
     Querystring: { regionId?: number, descending?: boolean }
   }>, reply: FastifyReply): Promise<object> {
     let result: any
@@ -42,7 +42,7 @@ export default class MasterDataController {
       schema: getZoneSchema
     }
   })
-  async getZone(req: FastifyRequest<{ Headers: { 'accept-language': 'TH' | 'EN' }, Querystring: { requiredProvince?: boolean } }>, reply: FastifyReply): Promise<object> {
+  async getZone(req: FastifyRequest<{ Headers: { 'accept-language': 'th' | 'en' }, Querystring: { requiredProvince?: boolean } }>, reply: FastifyReply): Promise<object> {
     return req.query.requiredProvince
       ? this.zoneService.findAllWithProvince(req.headers['accept-language'])
       : this.zoneService.findAll(req.headers['accept-language']);
@@ -54,7 +54,7 @@ export default class MasterDataController {
       schema: getProductType
     }
   })
-  async getProductType(req: FastifyRequest<{ Headers: { 'accept-language': 'TH' | 'EN' } }>, reply: FastifyReply): Promise<object> {
+  async getProductType(req: FastifyRequest<{ Headers: { 'accept-language': 'th' | 'en' } }>, reply: FastifyReply): Promise<object> {
     return this.productTypeService.findAll(req.headers['accept-language']);
   }
 
@@ -64,7 +64,7 @@ export default class MasterDataController {
       schema: getTruckType
     }
   })
-  async getTruckType(req: FastifyRequest<{ Headers: { 'accept-language': 'TH' | 'EN' } }>, reply: FastifyReply): Promise<object> {
+  async getTruckType(req: FastifyRequest<{ Headers: { 'accept-language': 'th' | 'en' } }>, reply: FastifyReply): Promise<object> {
     return this.truckTypeService.findAll(req.headers['accept-language']);
   }
 
@@ -74,7 +74,7 @@ export default class MasterDataController {
       schema: getTruckTypeGroup
     }
   })
-  async getTruckTypeGroup(req: FastifyRequest<{ Headers: { 'accept-language': 'TH' | 'EN' } }>, reply: FastifyReply): Promise<object> {
+  async getTruckTypeGroup(req: FastifyRequest<{ Headers: { 'accept-language': 'th' | 'en' } }>, reply: FastifyReply): Promise<object> {
     return this.truckTypeGroupService.findAll(req.headers['accept-language']);
   }
 
